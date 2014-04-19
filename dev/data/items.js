@@ -16,8 +16,8 @@ App.Data = [
     "id": 2,
     "title": "Item2 Title",
     "description": "The description for item 2 goes here",
-    "thumbnail": "img/items/item02_thumbnail.jpg",
-    "item_detail_image": "img/items/item02_thumbnail.jpg",
+    "thumbnail": "/img/items/item02_thumbnail.jpg",
+    "item_detail_image": "/img/items/item02_thumbnail.jpg",
     "categories": [
       "cat4",
       "cat5",
@@ -28,8 +28,8 @@ App.Data = [
     "id": 3,
     "title": "Item3 Title",
     "description": "The description for item 3 goes here",
-    "thumbnail": "img/items/item03_thumbnail.jpg",
-    "item_detail_image": "img/items/item03_thumbnail.jpg",
+    "thumbnail": "/img/items/item03_thumbnail.jpg",
+    "item_detail_image": "/img/items/item03_thumbnail.jpg",
     "categories": [
       "cat1",
       "cat3"
@@ -39,8 +39,8 @@ App.Data = [
     "id": 4,
     "title": "Item4 Title",
     "description": "The description for item 4 goes here",
-    "thumbnail": "img/items/item04_thumbnail.jpg",
-    "item_detail_image": "img/items/item04_thumbnail.jpg",
+    "thumbnail": "/img/items/item04_thumbnail.jpg",
+    "item_detail_image": "/img/items/item04_thumbnail.jpg",
     "categories": [
       "cat2",
       "cat4"
