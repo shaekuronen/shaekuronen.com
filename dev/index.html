@@ -10,19 +10,13 @@
 
     <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet" type="text/css">
+
     <!-- css -->
-    <!--
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css">
-    -->
-    <style>
-    li {
-      list-style-type: none;
-      display: inline-block;
-      margin: 0 5px 1px 0;
-      padding: 0;
-    }
-    </style>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/grid.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/header.css">
     <!-- end css -->
 
     <!-- modernizr -->
@@ -31,23 +25,104 @@
 
     <!-- google analytics -->
     <script>
-        (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-        e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-        e.src='//www.google-analytics.com/analytics.js';
-        r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-        ga('create','UA-XXXXX-X');ga('send','pageview');
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
     </script>
     <!-- end google analytics -->
 
   </head>
   <body>
 
-    <div id="grid-sorter-region"></div>
+    <!-- container -->
+    <div class="sk-container">
 
-    <div id="grid-region"></div>
+      <!-- header -->
+      <header>
+        <nav>
+          <ul class='sk-nav'>
 
-    <div id="item-detail-region"></div>
+            <!-- projects dropdown -->
+            <li id="projects-sorter-region" class='sk-nav_item sk-dropdown-nav_container'>
+
+              <h2>Projects</h2>
+
+              <ul class='sk-dropdown-nav_dropdown-element'>
+
+                <li>
+                  <h4>Cat 1</h4>
+                  <ul class='sk-dropdown-nav_dropdown-element_sub-nav'>
+                    <li>Project 1</li>
+                    <li>Project 2</li>
+                    <li>Project 3</li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h4>Cat 2</h4>
+                  <ul class='sk-dropdown-nav_dropdown-element_sub-nav'>
+                    <li>Project 4</li>
+                    <li>Project 5</li>
+                    <li>Project 6</li>
+                    <li>Project 7</li>
+                    <li>Project 8</li>
+                    <li>Project 9</li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h4>Cat 3</h4>
+                  <ul class='sk-dropdown-nav_dropdown-element_sub-nav'>
+                    <li>Project 3</li>
+                    <li>Project 5</li>
+                    <li>Project 8</li>
+                  </ul>
+                </li>
+
+                <li>
+                  <h4>Cat 4</h4>
+                  <ul class='sk-dropdown-nav_dropdown-element_sub-nav'>
+                    <li>Project 11</li>
+                    <li>Project 15</li>
+                    <li>Project 17</li>
+                  </ul>
+                </li>
+
+              </ul>
+            </li>
+            <!-- end projects dropdown -->
+
+            <!-- clients dropdown -->
+            <li id="clients-sorter-region" class='sk-nav_item sk-dropdown-nav_container'>
+
+              <h2>Clients</h2>
+
+              <ul class='sk-dropdown-nav_dropdown-element'>
+                <li>Client 1</li>
+                <li>Client 2</li>
+                <li>Client 3</li>
+                <li>Client 4</li>
+              </ul>
+
+            </li>
+            <!-- clients dropdown -->
+
+          </ul>
+        </nav>
+      </header>
+      <!-- end header -->
+
+      <div id="grid-sorter-region"></div>
+
+      <div id="grid-region"></div>
+
+      <div id="item-detail-region"></div>
+
+    </div>
+    <!-- end container -->
 
     <!-- vendor -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>

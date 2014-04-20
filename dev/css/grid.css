@@ -1,0 +1,39 @@
+
+.sk-container {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+@media (max-width: 719px) {
+
+/*  .sk-container {
+    width: 95%;
+    margin: 0;
+    padding: 0 2.5%;
+  }*/
+
+}
+
+@media (min-width: 720px) and (max-width: 1079px) {
+
+/*  .sk-container {
+    width: 90%;
+    margin: 0;
+    padding: 0 5%;
+  }*/
+
+}
+
+@media (min-width: 1080px) and (max-width: 1259px) {
+
+
+
+}
+
+/* 1260 + 20px border = 1300 */
+@media (min-width: 1260px) {
+
+
+
+}
