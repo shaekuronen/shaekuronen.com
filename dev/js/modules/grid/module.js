@@ -2,7 +2,7 @@
 App.module("Grid", function(Grid, App, Backbone, Marionette, $, _) {
 
   // create another instance of App.ItemsCollection to allow filtering and reseting while preserving an apriori version (App.itemsCollection) to filter against
-  var gridCollection = new App.ItemsCollection(App.Data);
+  var gridCollection = new App.ItemsCollection(App.Projects);
 
   // create an instance of GridCollectionView
   var gridCollectionView = new App.GridCollectionView({

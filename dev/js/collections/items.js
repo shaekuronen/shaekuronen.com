@@ -65,7 +65,7 @@ App.ItemsCollection = Backbone.Collection.extend({
 });
 
 // both grid and sorter_grid modules reference itemsCollection, so make instance here to have one global version (vs instantiating in both the module definitions, which doesn't seem super dry)
-App.itemsCollection = new App.ItemsCollection(App.Data);
+App.itemsCollection = new App.ItemsCollection(App.Projects);
 
 // create global unique categories instance, used in grid_sorter module & route_controller
 App.uniqueCategoriesObject = App.itemsCollection.getUniqueCategories();
