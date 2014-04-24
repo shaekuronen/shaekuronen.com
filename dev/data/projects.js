@@ -15,7 +15,7 @@ App.Projects = [
   },
   {
     "id": 11,
-    "title": "Responsive + Mobile Optimized 206 Site",
+    "title": "206 Site",
     "description": "The description goes here",
     "thumbnail": "/img/projects/206_site/280x210.jpg",
     "item_detail_image": "/img/items/item02_thumbnail.jpg",
@@ -29,7 +29,7 @@ App.Projects = [
   },
   {
     "id": 10,
-    "title": "Toyota Rav4 EV Tour Site",
+    "title": "Toyota Rav4 EV Site",
     "description": "The description goes here",
     "thumbnail": "/img/projects/toyota_rav4_ev/280x210.jpg",
     "item_detail_image": "/img/items/item03_thumbnail.jpg",
@@ -41,7 +41,7 @@ App.Projects = [
   },
   {
     "id": 9,
-    "title": "DoubleDown Interactive Site",
+    "title": "DoubleDown Site",
     "description": "New Responsive + Mobile Optimized DoubleDown Site",
     "thumbnail": "/img/projects/doubledown_site/280x210.jpg",
     "item_detail_image": "/img/items/item04_thumbnail.jpg",

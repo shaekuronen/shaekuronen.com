@@ -1,5 +1,5 @@
 
-App.ItemModel = Backbone.Model.extend({
+App.ProjectModel = Backbone.Model.extend({
 
   initialize: function() {
 

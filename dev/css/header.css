@@ -33,7 +33,7 @@ header {
 .sk-dropdown-nav_dropdown-element > li {
   position: relative;
   padding: 10px 15px;
-  width: 100px;
+  width: 150px;
   cursor: pointer;
   font: 13px/20px 'Open Sans', Open Sans, Helvetica, Arial, sans-serif;
   font-weight: 300;
@@ -54,7 +54,7 @@ header {
 }
 .sk-dropdown-nav_dropdown-element_sub-nav > li {
   padding: 10px 15px;
-  width: 100px;
+  width: 150px;
   cursor: pointer;
   font: 13px/20px 'Open Sans', Open Sans, Helvetica, Arial, sans-serif;
   font-weight: 300;

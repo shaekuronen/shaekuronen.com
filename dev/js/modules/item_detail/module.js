@@ -10,7 +10,7 @@ App.module("ItemDetail", function(ItemDetail, App, Backbone, Marionette, $, _) {
 
   App.vent.on('grid:item:selected', function(modelId) {
 
-    var model = App.itemsCollection.get(modelId);
+    var model = App.projectsCollection.get(modelId);
 
     // instantiate view
     var itemDetailItemView = new App.ItemDetailItemView({
@@ -27,7 +27,7 @@ App.module("ItemDetail", function(ItemDetail, App, Backbone, Marionette, $, _) {
 
   App.vent.on('item:route', function(url_safe_title) {
 
-    var model = App.itemsCollection.findWhere({'url_safe_title': url_safe_title});
+    var model = App.projectsCollection.findWhere({'url_safe_title': url_safe_title});
 
     // instantiate view
     var itemDetailItemView = new App.ItemDetailItemView({

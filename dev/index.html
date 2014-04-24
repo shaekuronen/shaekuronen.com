@@ -46,52 +46,9 @@
           <ul class='sk-nav'>
 
             <!-- projects dropdown -->
-            <li id="projects-sorter-region" class='sk-nav_item sk-dropdown-nav_container'>
-
+            <li class='sk-nav_item sk-dropdown-nav_container'>
               <h2>Projects</h2>
-
-              <ul class='sk-dropdown-nav_dropdown-element'>
-
-                <li>
-                  <h4>Cat 1</h4>
-                  <ul class='sk-dropdown-nav_dropdown-element_sub-nav'>
-                    <li>Project 1</li>
-                    <li>Project 2</li>
-                    <li>Project 3</li>
-                  </ul>
-                </li>
-
-                <li>
-                  <h4>Cat 2</h4>
-                  <ul class='sk-dropdown-nav_dropdown-element_sub-nav'>
-                    <li>Project 4</li>
-                    <li>Project 5</li>
-                    <li>Project 6</li>
-                    <li>Project 7</li>
-                    <li>Project 8</li>
-                    <li>Project 9</li>
-                  </ul>
-                </li>
-
-                <li>
-                  <h4>Cat 3</h4>
-                  <ul class='sk-dropdown-nav_dropdown-element_sub-nav'>
-                    <li>Project 3</li>
-                    <li>Project 5</li>
-                    <li>Project 8</li>
-                  </ul>
-                </li>
-
-                <li>
-                  <h4>Cat 4</h4>
-                  <ul class='sk-dropdown-nav_dropdown-element_sub-nav'>
-                    <li>Project 11</li>
-                    <li>Project 15</li>
-                    <li>Project 17</li>
-                  </ul>
-                </li>
-
-              </ul>
+              <div id='sk-dropdown-nav_projects-dropdown-region'></div>
             </li>
             <!-- end projects dropdown -->
 
@@ -115,8 +72,6 @@
       </header>
       <!-- end header -->
 
-      <div id="grid-sorter-region"></div>
-
       <div id="grid-region"></div>
 
       <div id="item-detail-region"></div>
@@ -139,16 +94,17 @@
     <script src="/js/init.js"></script>
     <script src="/data/projects.js"></script>
     <script src="/templates/compiled.js"></script>
-    <script src="/js/models/item.js"></script>
-    <script src="/js/collections/items.js"></script>
+    <script src="/js/models/project.js"></script>
+    <script src="/js/collections/projects.js"></script>
     <script src="/js/controllers/route_controller.js"></script>
     <script src="/js/router.js"></script>
 
-    <!-- grid sorter module -->
-    <script src="/js/modules/grid_sorter/model.js"></script>
-    <script src="/js/modules/grid_sorter/item_view.js"></script>
-    <script src="/js/modules/grid_sorter/module.js"></script>
-    <!-- end grid sorter module -->
+    <!-- nav dropdown module -->
+    <script src="/js/modules/nav_dropdown/model.js"></script>
+    <script src="/js/modules/nav_dropdown/collection.js"></script>
+    <script src="/js/modules/nav_dropdown/item_view.js"></script>
+    <script src="/js/modules/nav_dropdown/module.js"></script>
+    <!-- end nav dropdown module -->
 
     <!-- grid module -->
     <script src="/js/modules/grid/item_view.js"></script>

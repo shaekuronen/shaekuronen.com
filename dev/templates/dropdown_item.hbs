@@ -1,0 +1,24 @@
+
+{{#each categories}}
+
+<li>
+
+  <h4>{{this.category}}</h4>
+
+  {{!-- list any projects in this category --}}
+  {{#if this.projects}}
+
+    <ul class='sk-dropdown-nav_dropdown-element_sub-nav'>
+
+      {{#each this.projects}}
+        <li>{{this}}</li>
+      {{/each}}
+
+    </ul>
+
+  {{/if}}
+  {{!-- end list any projects in this category --}}
+
+</li>
+
+{{/each}}
