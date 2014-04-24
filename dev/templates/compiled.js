@@ -41,15 +41,6 @@ function program3(depth0,data) {
   return buffer;
   });
 
-this["JST"]["dev/templates/dropdown_item_heading.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
-
-
-  return "\n<h2>Projects</h2>\n";
-  });
-
 this["JST"]["dev/templates/grid_item.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};

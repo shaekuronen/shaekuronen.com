@@ -1,7 +1,7 @@
 
 App.module("ItemDetail", function(ItemDetail, App, Backbone, Marionette, $, _) {
 
-  App.vent.on('gridSorter:category:selected', function(category) {
+  App.vent.on('projects:category:selected', function(category) {
 
     // render item detail
     App.itemDetailRegion.close();

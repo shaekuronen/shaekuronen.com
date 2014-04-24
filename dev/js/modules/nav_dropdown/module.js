@@ -4,13 +4,14 @@ App.module("NavDropdown", function(NavDropdown, App, Backbone, Marionette, $, _)
   var navDropdownModel = new App.NavDropdownModel(App.uniqueCategoriesWithAssociatedProjectsObject);
 
   var navDropdownView = new App.NavDropdownItemView({
-    model: navDropdownModel
+    model: navDropdownModel,
+    el: '#sk-dropdown-nav_dropdown-element'
   });
 
-  // render sorter
-  App.projectsDropdownRegion.show(navDropdownView);
+  // render dropdown
+  navDropdownView.render();
 
-  App.vent.on('gridSorter:category:selected', function(category) {
+  App.vent.on('projects:category:selected', function(category) {
 
     // update the model's selected_category property
     navDropdownModel.setSelectedCategory(category);

@@ -12,7 +12,7 @@ App.module("Grid", function(Grid, App, Backbone, Marionette, $, _) {
   // initial render grid
   App.gridRegion.show(gridCollectionView);
 
-  App.vent.on('gridSorter:category:selected', function(category) {
+  App.vent.on('projects:category:selected', function(category) {
 
     // update collection models to selected:true if they contain the category
     App.projectsCollection.setSelectedCategory(category);

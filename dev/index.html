@@ -48,7 +48,7 @@
             <!-- projects dropdown -->
             <li class='sk-nav_item sk-dropdown-nav_container'>
               <h2>Projects</h2>
-              <div id='sk-dropdown-nav_projects-dropdown-region'></div>
+              <ul id='sk-dropdown-nav_dropdown-element' class='sk-dropdown-nav_dropdown-element'></ul>
             </li>
             <!-- end projects dropdown -->
 
@@ -119,7 +119,9 @@
 
     <!-- start app -->
     <script>
+    $(document).on('ready', function() {
       App.start();
+    });
     </script>
     <!-- end start app -->
 

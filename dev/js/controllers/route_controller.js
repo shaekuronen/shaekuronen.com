@@ -11,8 +11,8 @@ App.RouteController = Marionette.Controller.extend({
       _category = id;
     }
 
-    // notify controller that select element option was selected
-    App.vent.trigger('gridSorter:category:selected', _category);
+    // notify app that a projects category has been selected
+    App.vent.trigger('projects:category:selected', _category);
 
   },
 
