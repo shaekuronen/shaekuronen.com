@@ -1,6 +1,18 @@
 
 App.Projects = [
   {
+    "id": 13,
+    "title": "jQuery Flexloader",
+    "description": "The description goes here",
+    "thumbnail": "/img/projects/jquery_flexloader/280x210.jpg",
+    "item_detail_image": "/img/items/item01_thumbnail.jpg",
+    "categories": [
+      "Open Source"
+    ],
+    "client": "",
+    "client_logo": ""
+  },
+  {
     "id": 12,
     "title": "Denizen Site",
     "description": "The description goes here",

@@ -8,7 +8,7 @@ App.module("ItemDetail", function(ItemDetail, App, Backbone, Marionette, $, _) {
 
   });
 
-  App.vent.on('grid:item:selected', function(modelId) {
+  App.vent.on('project:selected', function(modelId) {
 
     var model = App.projectsCollection.get(modelId);
 

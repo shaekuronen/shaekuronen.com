@@ -33,7 +33,7 @@ App.module("Grid", function(Grid, App, Backbone, Marionette, $, _) {
   });
 
   // when an item in the grid is clicked
-  App.vent.on('grid:item:selected', function(modelId) {
+  App.vent.on('project:selected', function(modelId) {
 
     // deselect all items in the items collection
     App.projectsCollection.setSelectedCategory('');

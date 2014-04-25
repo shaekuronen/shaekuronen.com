@@ -1,7 +1,13 @@
 
 App.module("NavDropdown", function(NavDropdown, App, Backbone, Marionette, $, _) {
 
-  var navDropdownModel = new App.NavDropdownModel(App.uniqueCategoriesWithAssociatedProjectsObject);
+  // create global unique categories instance, used in grid_sorter module & route_controller
+  NavDropdown.uniqueCategoriesObject = App.projectsCollection.getUniqueCategories();
+
+  // add projects associated with each category to App.uniqueCategoriesObject
+  NavDropdown.uniqueCategoriesWithAssociatedProjectsObject = App.projectsCollection.getProjectsByCategory(NavDropdown.uniqueCategoriesObject);
+
+  var navDropdownModel = new App.NavDropdownModel(NavDropdown.uniqueCategoriesWithAssociatedProjectsObject);
 
   var navDropdownView = new App.NavDropdownItemView({
     model: navDropdownModel,
@@ -18,7 +24,7 @@ App.module("NavDropdown", function(NavDropdown, App, Backbone, Marionette, $, _)
 
   });
 
-  App.vent.on('grid:item:selected', function(modelId) {
+  App.vent.on('project:selected', function(modelId) {
 
     // update the model's selected_category property to empty string
     // this resets the sorter to default state (in this case, 'Categories')

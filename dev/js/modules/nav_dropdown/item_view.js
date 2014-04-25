@@ -18,7 +18,7 @@ App.NavDropdownItemView = Marionette.ItemView.extend({
   projectSelected: function(event) {
     event.stopPropagation();
     console.log('in projectSelected, the category selected is ' + event.currentTarget.innerHTML);
-    App.vent.trigger('projects:selected', event.currentTarget.innerHTML);
+    App.vent.trigger('project:selected', event.currentTarget.innerHTML);
   }
 
 });
