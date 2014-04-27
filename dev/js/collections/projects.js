@@ -48,13 +48,16 @@ App.ProjectsCollection = Backbone.Collection.extend({
   getUniqueCategories: function() {
 
     var _this = this,
-        _categories = [];
+        _categoriesArray = [];
 
     _.each(_this.models, function(model) {
 
-      _.each(model.get('categories'), function(category) {
+      var _categories = model.get('categories'),
+          _categories_keys = _.keys(_categories);
 
-        _categories.push(category);
+      _.each(_categories_keys, function(category) {
+
+        _categoriesArray.push(category);
 
       });
 
@@ -63,7 +66,7 @@ App.ProjectsCollection = Backbone.Collection.extend({
 
     // return an object with the unique categories sorted alphabetically
     return {
-      'categories': (_.uniq(_categories)).sort()
+      'categories': (_.uniq(_categoriesArray)).sort()
     };
 
   },
@@ -82,8 +85,12 @@ App.ProjectsCollection = Backbone.Collection.extend({
       // iterate through the collection models
       _.each(_this.models, function(model) {
 
+        // get the categories object
+        var _categories = model.get('categories'),
+            _categories_keys = _.keys(_categories);
+
         // if this models categories attribute contains the current category
-        if ( _.contains(model.get('categories'), category) ) {
+        if ( _.contains(_categories_keys, category) ) {
 
           _projects.push(model.get('title'));
 
@@ -104,14 +111,6 @@ App.ProjectsCollection = Backbone.Collection.extend({
 
     });
 
-    console.log('_categories is currently ' + Object.keys(_categories));
-    console.log('the type of _categories is ' + typeof _categories);
-    console.log('the type of _categories is array? ' + _.isArray(_categories));
-    console.log('_categories[0] is currently ' + _categories[0]);
-    console.log('_categories[CMS] is currently ' + Object.keys(_categories['CMS']));
-    console.log('_categories[CMS] is currently ' + Object.keys(_categories['CMS']['projects']));
-    console.log('_categories[CMS] is currently ' + _categories['CMS']['projects']['0']);
-
     return {
       'categories': _categories
     };
@@ -125,5 +124,5 @@ App.ProjectsCollection = Backbone.Collection.extend({
 // both grid and sorter_grid modules reference itemsCollection, so make instance here to have one global version (vs instantiating in both the module definitions, which doesn't seem super dry)
 App.projectsCollection = new App.ProjectsCollection(App.Projects);
 
-
-
+// create global unique categories instance, used in grid_sorter module & route_controller
+App.uniqueCategoriesObject = App.projectsCollection.getUniqueCategories();

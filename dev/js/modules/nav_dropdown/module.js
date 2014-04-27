@@ -1,11 +1,8 @@
 
 App.module("NavDropdown", function(NavDropdown, App, Backbone, Marionette, $, _) {
 
-  // create global unique categories instance, used in grid_sorter module & route_controller
-  NavDropdown.uniqueCategoriesObject = App.projectsCollection.getUniqueCategories();
-
   // add projects associated with each category to App.uniqueCategoriesObject
-  NavDropdown.uniqueCategoriesWithAssociatedProjectsObject = App.projectsCollection.getProjectsByCategory(NavDropdown.uniqueCategoriesObject);
+  NavDropdown.uniqueCategoriesWithAssociatedProjectsObject = App.projectsCollection.getProjectsByCategory(App.uniqueCategoriesObject);
 
   var navDropdownModel = new App.NavDropdownModel(NavDropdown.uniqueCategoriesWithAssociatedProjectsObject);
 
