@@ -15,6 +15,8 @@ App.on("initialize:after", function() {
   // instantiate router
   App.router = new App.Router();
 
+  App.projectsCollection = new App.ProjectsCollection(App.Projects);
+
   // start Backbone history
   Backbone.history.start({
     pushState: true,

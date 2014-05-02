@@ -68,13 +68,12 @@ App.Projects = [
   },
   {
     "id": 8,
-    "title": "Kindle Fire + Marvel Facebook App",
+    "title": "Kindle Fire + Marvel Site",
     "description": "The description goes here",
     "thumbnail": "/img/projects/kindle_marvel/280x210.jpg",
     "item_detail_image": "/img/items/item05_thumbnail.jpg",
     "categories": [
       "Landing",
-      "Facebook",
       "Mobile Optimized"
     ],
     "client": "Kindle Fire",

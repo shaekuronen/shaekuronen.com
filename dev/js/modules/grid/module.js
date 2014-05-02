@@ -2,11 +2,11 @@
 App.module("Grid", function(Grid, App, Backbone, Marionette, $, _) {
 
   //
-  App.projectsCollection = new App.ProjectsCollection(App.Projects);
+  App.gridCollection = new App.ProjectsCollection(App.Projects);
 
   // create an instance of GridCollectionView
   App.gridCollectionView = new App.GridCollectionView({
-    collection: App.projectsCollection
+    collection: App.gridCollection
   });
 
   // initial render grid
@@ -28,7 +28,7 @@ App.module("Grid", function(Grid, App, Backbone, Marionette, $, _) {
     // get a collection of models that have property selected: true
     var selectedCollection = App.projectsCollection.getSelectedModels();
 
-    gridCollection.reset(selectedCollection);
+    App.gridCollection.reset(selectedCollection);
 
   });
 
