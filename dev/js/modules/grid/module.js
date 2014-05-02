@@ -1,16 +1,16 @@
 
 App.module("Grid", function(Grid, App, Backbone, Marionette, $, _) {
 
-  // create another instance of App.projectsCollection to allow filtering and reseting while preserving an apriori version (App.projectsCollection) to filter against
-  var gridCollection = new App.ProjectsCollection(App.Projects);
+  //
+  App.projectsCollection = new App.ProjectsCollection(App.Projects);
 
   // create an instance of GridCollectionView
-  var gridCollectionView = new App.GridCollectionView({
-    collection: gridCollection
+  App.gridCollectionView = new App.GridCollectionView({
+    collection: App.projectsCollection
   });
 
   // initial render grid
-  App.gridRegion.show(gridCollectionView);
+  App.gridRegion.show(App.gridCollectionView);
 
   App.vent.on('projects:category:selected', function(category) {
 

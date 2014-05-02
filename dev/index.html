@@ -42,17 +42,16 @@
 
       <!-- header -->
       <header>
-        <nav>
-          <ul class='sk-nav'>
+        <nav id='sk-dropdowns-region'>
 
-            <!-- projects dropdown -->
+          <!--
+          <ul id='sk-nav' class='sk-nav'>
+
             <li class='sk-nav_item sk-dropdown-nav_container'>
               <h2>Projects</h2>
               <ul id='sk-dropdown-nav_dropdown-element' class='sk-dropdown-nav_dropdown-element'></ul>
             </li>
-            <!-- end projects dropdown -->
 
-            <!-- clients dropdown -->
             <li id="clients-sorter-region" class='sk-nav_item sk-dropdown-nav_container'>
 
               <h2>Clients</h2>
@@ -65,9 +64,10 @@
               </ul>
 
             </li>
-            <!-- clients dropdown -->
 
           </ul>
+          -->
+
         </nav>
       </header>
       <!-- end header -->
@@ -93,6 +93,7 @@
 
     <script src="/js/init.js"></script>
     <script src="/data/projects.js"></script>
+    <script src="/data/dropdowns.js"></script>
     <script src="/templates/compiled.js"></script>
     <script src="/js/models/project.js"></script>
     <script src="/js/collections/projects.js"></script>
@@ -101,7 +102,9 @@
 
     <!-- nav dropdown module -->
     <script src="/js/modules/nav_dropdown/model.js"></script>
+    <script src="/js/modules/nav_dropdown/collection.js"></script>
     <script src="/js/modules/nav_dropdown/item_view.js"></script>
+    <script src="/js/modules/nav_dropdown/collection_view.js"></script>
     <script src="/js/modules/nav_dropdown/module.js"></script>
     <!-- end nav dropdown module -->
 

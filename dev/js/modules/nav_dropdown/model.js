@@ -1,5 +1,5 @@
 
-App.NavDropdownModel = Backbone.Model.extend({
+App.DropdownModel = Backbone.Model.extend({
 
   initialize: function() {
 

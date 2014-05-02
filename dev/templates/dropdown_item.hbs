@@ -1,24 +1,28 @@
 
-{{#each categories}}
+<h2>{{heading}}</h2>
 
-<li>
+<ul id='sk-dropdown-nav_dropdown-element' class='sk-dropdown-nav_dropdown-element'>
 
-  <h4>{{this.category}}</h4>
+  {{#each items}}
 
-  {{!-- list any projects in this category --}}
-  {{#if this.projects}}
+  <li>
 
-    <ul class='sk-dropdown-nav_dropdown-element_sub-nav'>
+    <h4>{{@key}}</h4>
 
-      {{#each this.projects}}
-        <li>{{this}}</li>
-      {{/each}}
+    {{#if this.subItems}}
 
-    </ul>
+      <ul class='sk-dropdown-nav_dropdown-element_sub-nav'>
 
-  {{/if}}
-  {{!-- end list any projects in this category --}}
+        {{#each this.subItems}}
+          <li>{{this}}</li>
+        {{/each}}
 
-</li>
+      </ul>
 
-{{/each}}
+    {{/if}}
+
+  </li>
+
+  {{/each}}
+
+</ul>

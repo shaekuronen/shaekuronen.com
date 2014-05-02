@@ -2,7 +2,7 @@
 App = new Marionette.Application();
 
 App.addRegions({
-  projectsDropdownRegion: '#sk-dropdown-nav_projects-dropdown-region',
+  dropdownsRegion: '#sk-dropdowns-region',
   gridRegion: '#grid-region',
   itemDetailRegion: '#item-detail-region'
 });

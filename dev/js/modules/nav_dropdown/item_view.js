@@ -1,5 +1,8 @@
 
-App.NavDropdownItemView = Marionette.ItemView.extend({
+App.DropdownItemView = Marionette.ItemView.extend({
+
+  tagName: 'li',
+  className: 'sk-nav_item sk-dropdown-nav_container',
 
   template: JST['dev/templates/dropdown_item.hbs'],
 

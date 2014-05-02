@@ -91,7 +91,7 @@ App.Projects = [
       "Responsive",
       "CMS"
     ],
-    "client": "",
+    "client": "Coca-Cola",
     "client_logo": ""
   },
   {
@@ -142,7 +142,7 @@ App.Projects = [
       "Landing",
       "Facebook"
     ],
-    "client": "",
+    "client": "Kate Spade",
     "client_logo": ""
   },
   {
