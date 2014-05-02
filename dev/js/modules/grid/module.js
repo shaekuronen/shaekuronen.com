@@ -1,16 +1,15 @@
 
 App.module("Grid", function(Grid, App, Backbone, Marionette, $, _) {
 
-  //
-  App.gridCollection = new App.ProjectsCollection(App.Projects);
+  Grid.selectedProjectsCollection = App.projectsCollection.getSelectedModels();
 
   // create an instance of GridCollectionView
-  App.gridCollectionView = new App.GridCollectionView({
-    collection: App.gridCollection
+  Grid.collectionView = new App.GridCollectionView({
+    collection: Grid.selectedProjectsCollection
   });
 
   // initial render grid
-  App.gridRegion.show(App.gridCollectionView);
+  App.gridRegion.show(Grid.collectionView);
 
   App.vent.on('projects:category:selected', function(category) {
 
@@ -28,7 +27,7 @@ App.module("Grid", function(Grid, App, Backbone, Marionette, $, _) {
     // get a collection of models that have property selected: true
     var selectedCollection = App.projectsCollection.getSelectedModels();
 
-    App.gridCollection.reset(selectedCollection);
+    Grid.selectedProjectsCollection.reset(selectedCollection);
 
   });
 

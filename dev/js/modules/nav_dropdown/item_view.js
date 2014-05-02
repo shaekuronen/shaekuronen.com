@@ -12,16 +12,17 @@ App.DropdownItemView = Marionette.ItemView.extend({
   },
 
   projectsCategorySelected: function(event) {
-    console.log('in projectsCategorySelected, the category selected is ' + event.currentTarget.innerHTML);
+
     // notify app that a projects category has been selected
     App.vent.trigger('projects:category:selected', event.currentTarget.innerHTML);
 
   },
 
   projectSelected: function(event) {
+
     event.stopPropagation();
-    console.log('in projectSelected, the category selected is ' + event.currentTarget.innerHTML);
     App.vent.trigger('project:selected', event.currentTarget.innerHTML);
+
   }
 
 });
