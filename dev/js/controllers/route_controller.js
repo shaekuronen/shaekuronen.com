@@ -23,13 +23,17 @@ App.RouteController = Marionette.Controller.extend({
 
     console.log('categoryRoute executed and the category was ' + category);
 
-    var _category = 'all',
-        _categories = App.projectsCollection.getUniqueCategories();
+    // category defaults to all
+    var _category = 'all';
 
     // if the category exists in the categories array
-    if (_.indexOf(_categories, category) >= 0) {
-      _category = category;
-    }
+    App.categoriesCollection.each(function(model) {
+
+      if (model.get('url_title') === category) {
+        _category = category;
+      }
+
+    });
 
     // notify app that a projects category has been selected
     App.vent.trigger('projects:category:selected', _category);

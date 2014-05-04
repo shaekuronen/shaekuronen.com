@@ -42,17 +42,29 @@ App.ProjectsCollection = Backbone.Collection.extend({
 
   getUniqueCategories: function() {
 
-    var _this = this,
-        _categoriesArray = [];
+    var that = this,
+        _categoriesArray = [],
+        _uniqueCategoriesArray = [];
 
-    _.each(_this.models, function(model) {
+    _.each(that.models, function(model) {
 
       var _categories = model.get('categories'),
           _categories_keys = _.keys(_categories);
 
       _.each(_categories_keys, function(category) {
 
-        _categoriesArray.push(category);
+        var _category = category;
+
+        // if the category does not exist in _categoriesArray
+        if ( !(_.contains(_categoriesArray, category)) ) {
+
+          _categoriesArray.push(_category);
+
+          _uniqueCategoriesArray.push({
+            'title': _category
+          });
+
+        }
 
       });
 
@@ -60,9 +72,7 @@ App.ProjectsCollection = Backbone.Collection.extend({
     // end create an array of all categories in the collection
 
     // return an object with the unique categories sorted alphabetically
-    return {
-      'categories': (_.uniq(_categoriesArray)).sort()
-    };
+    return _uniqueCategoriesArray;
 
   },
 
