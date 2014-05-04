@@ -9,6 +9,12 @@ App.CategoryModel = Backbone.Model.extend({
     // add the url safe title to the model
     this.set('url_title', url_title);
 
+    var _projects = App.projectsCollection.getProjectsByCategory(this.get('title'));
+
+    this.set('projects', _projects);
+
+    window._projects = _projects;
+
   }
 
 });

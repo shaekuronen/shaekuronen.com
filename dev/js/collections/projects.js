@@ -76,52 +76,32 @@ App.ProjectsCollection = Backbone.Collection.extend({
 
   },
 
-  getProjectsByCategory: function(categories) {
+  getProjectsByCategory: function(category) {
 
-    var _this = this,
-        _categories = [];
+    var that = this,
+        _category = category,
+        _projects = new Backbone.Collection();
 
-    // for each unique category in the projects collection
-    _.each(categories['categories'], function(category) {
+    // for each model in the collection
+    that.each(function(model) {
 
-      var _projects = [],
-          _category = {};
+      // for each category in the categories attribute
+      var _categories = model.get('categories'),
+          _categories_keys = _.keys(_categories);
 
-      // iterate through the collection models
-      _.each(_this.models, function(model) {
+      // if this models categories attribute contains the current category
+      if ( _.contains(_categories_keys, _category) ) {
 
-        // get the categories object
-        var _categories = model.get('categories'),
-            _categories_keys = _.keys(_categories);
+        // add the model to the collection
+        _projects.add(model);
 
-        // if this models categories attribute contains the current category
-        if ( _.contains(_categories_keys, category) ) {
-
-          _projects.push(model.get('title'));
-
-        }
-
-      });
-
-      _category['projects'] = _projects;
-
-      _category = {
-        'category': category,
-        'projects': _projects
       }
-
-      _categories.push(_category);
-      _categories[category] = _category;
-
 
     });
 
-    return {
-      'categories': _categories
-    };
+    return _projects;
 
   }
-
 
 });
 
