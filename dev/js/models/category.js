@@ -13,8 +13,6 @@ App.CategoryModel = Backbone.Model.extend({
 
     this.set('projects', _projects);
 
-    window._projects = _projects;
-
   }
 
 });

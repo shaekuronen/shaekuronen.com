@@ -6,14 +6,12 @@ App.GridItemView = Marionette.ItemView.extend({
   template: JST['dev/templates/grid_item.hbs'],
 
   events: {
-    'click': 'itemClicked'
+    'click': 'thumbnailSelected'
   },
 
-  itemClicked: function() {
+  thumbnailSelected: function() {
 
-    App.vent.trigger('project:selected', this.model.get('id'));
-
-    App.vent.trigger('project:detail:requested', this.model);
+    App.vent.trigger('project:thumbnail:selected', this.model);
 
   }
 

@@ -9,6 +9,7 @@ App.Projects = [
     "categories": [
       "Open Source"
     ],
+    "agency": "",
     "client": "",
     "client_logo": ""
   },
@@ -22,6 +23,7 @@ App.Projects = [
       "Landing",
       "Responsive"
     ],
+    "agency": "206inc",
     "client": "Denizen",
     "client_logo": ""
   },
@@ -36,6 +38,7 @@ App.Projects = [
       "Responsive",
       "Mobile Optimized"
     ],
+    "agency": "206inc",
     "client": "206inc",
     "client_logo": ""
   },
@@ -48,6 +51,7 @@ App.Projects = [
     "categories": [
       "Landing"
     ],
+    "agency": "206inc",
     "client": "Toyota",
     "client_logo": ""
   },
@@ -63,6 +67,7 @@ App.Projects = [
       "Mobile Optimized",
       "CMS"
     ],
+    "agency": "206inc",
     "client": "DoubleDown Interactive",
     "client_logo": ""
   },
@@ -76,6 +81,7 @@ App.Projects = [
       "Landing",
       "Mobile Optimized"
     ],
+    "agency": "206inc",
     "client": "Kindle Fire",
     "client_logo": ""
   },
@@ -90,6 +96,7 @@ App.Projects = [
       "Responsive",
       "CMS"
     ],
+    "agency": "206inc",
     "client": "Coca-Cola",
     "client_logo": ""
   },
@@ -103,6 +110,7 @@ App.Projects = [
       "Landing",
       "Facebook"
     ],
+    "agency": "AFanturs",
     "client": "Alexander Wang",
     "client_logo": ""
   },
@@ -116,6 +124,7 @@ App.Projects = [
       "Landing",
       "Facebook"
     ],
+    "agency": "AFanturs",
     "client": "Jack Spade",
     "client_logo": ""
   },
@@ -128,6 +137,7 @@ App.Projects = [
     "categories": [
       "Landing"
     ],
+    "agency": "AFanturs",
     "client": "Buddy Media",
     "client_logo": ""
   },
@@ -141,6 +151,7 @@ App.Projects = [
       "Landing",
       "Facebook"
     ],
+    "agency": "AFanturs",
     "client": "Kate Spade",
     "client_logo": ""
   },
@@ -154,6 +165,7 @@ App.Projects = [
       "Landing",
       "Tumblr"
     ],
+    "agency": "AFanturs",
     "client": "Americana Manhasset",
     "client_logo": ""
   },
@@ -167,6 +179,7 @@ App.Projects = [
       "Landing",
       "Tumblr"
     ],
+    "agency": "AFanturs",
     "client": "Neiman Marcus",
     "client_logo": ""
   }

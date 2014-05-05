@@ -42,15 +42,37 @@
 
       <!-- header -->
       <header>
-        <nav id='sk-dropdowns-region'></nav>
+        <nav>
+          <ul class="sk-nav">
+
+            <!-- projects dropdown -->
+            <li id="sk-projects-dropdown" class="sk-nav_item sk-dropdown-nav_container">
+
+              <h2>Projects</h2>
+
+              <ul id="sk-projects-dropdown-element" class="sk-dropdown-nav_dropdown-element"></ul>
+
+            </li>
+            <!-- end projects dropdown -->
+
+            <!-- clients dropdown -->
+            <li id="sk-clients-dropdown" class="sk-nav_item sk-dropdown-nav_container">
+
+              <h2>Clients</h2>
+
+              <ul id="sk-clients-dropdown-element" class="sk-dropdown-nav_dropdown-element"></ul>
+
+            </li>
+            <!-- end clients dropdown -->
+
+          </ul>
+        </nav>
       </header>
       <!-- end header -->
 
+      <!-- main content region -->
       <div id="sk-main-region"></div>
-
-      <div id="grid-region"></div>
-
-      <div id="item-detail-region"></div>
+      <!-- end main content region -->
 
     </div>
     <!-- end container -->
@@ -63,6 +85,19 @@
     <script src="/bower_components/backbone.wreqr/lib/backbone.wreqr.js"></script>
     <script src="/bower_components/backbone.babysitter/lib/backbone.babysitter.js"></script>
     <script src="/bower_components/handlebars/handlebars.js"></script>
+    <script>
+      Handlebars.registerHelper("debug", function(optionalValue) {
+        console.log("Current Context");
+        console.log("====================");
+        console.log(this);
+
+        if (optionalValue) {
+          console.log("Value");
+          console.log("====================");
+          console.log(optionalValue);
+        }
+      });
+    </script>
     <!-- end vendor -->
 
     <!-- app -->
@@ -71,20 +106,28 @@
     <script src="/data/projects.js"></script>
     <script src="/data/dropdowns.js"></script>
     <script src="/templates/compiled.js"></script>
+
     <script src="/js/models/project.js"></script>
     <script src="/js/collections/projects.js"></script>
+
     <script src="/js/models/category.js"></script>
     <script src="/js/collections/categories.js"></script>
+
+    <script src="/js/models/client.js"></script>
+    <script src="/js/collections/clients.js"></script>
+
     <script src="/js/controllers/route_controller.js"></script>
     <script src="/js/router.js"></script>
 
-    <!-- nav dropdown module -->
-    <script src="/js/modules/nav_dropdown/model.js"></script>
-    <script src="/js/modules/nav_dropdown/collection.js"></script>
-    <script src="/js/modules/nav_dropdown/item_view.js"></script>
-    <script src="/js/modules/nav_dropdown/collection_view.js"></script>
-    <script src="/js/modules/nav_dropdown/module.js"></script>
-    <!-- end nav dropdown module -->
+    <!-- projects dropdown module -->
+    <script src="/js/modules/dropdown_projects/item_view.js"></script>
+    <script src="/js/modules/dropdown_projects/module.js"></script>
+    <!-- end projects dropdown module -->
+
+    <!-- clients dropdown module -->
+    <script src="/js/modules/dropdown_clients/item_view.js"></script>
+    <script src="/js/modules/dropdown_clients/module.js"></script>
+    <!-- end clients dropdown module -->
 
     <!-- grid module -->
     <script src="/js/modules/grid/item_view.js"></script>

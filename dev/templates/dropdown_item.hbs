@@ -1,28 +1,20 @@
 
-<h2>{{heading}}</h2>
+{{#each this.items}}
+<li>
 
-<ul id='sk-dropdown-nav_dropdown-element' class='sk-dropdown-nav_dropdown-element'>
+  <h4>{{title}}</h4>
 
-  {{#each items}}
+  {{#if this.projects}}
 
-  <li>
+    <ul class='sk-dropdown-nav_dropdown-element_sub-nav'>
 
-    <h4>{{@key}}</h4>
+      {{#each this.projects.models}}
+        <li>{{this.attributes.title}}</li>
+      {{/each}}
 
-    {{#if this.subItems}}
+    </ul>
 
-      <ul class='sk-dropdown-nav_dropdown-element_sub-nav'>
+  {{/if}}
 
-        {{#each this.subItems}}
-          <li>{{this}}</li>
-        {{/each}}
-
-      </ul>
-
-    {{/if}}
-
-  </li>
-
-  {{/each}}
-
-</ul>
+</li>
+{{/each}}

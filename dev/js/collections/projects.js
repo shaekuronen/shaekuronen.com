@@ -53,7 +53,7 @@ App.ProjectsCollection = Backbone.Collection.extend({
     this.each(function(model) {
 
       // if the current model is contained in the _models array
-      if _.contains(_models, model) {
+      if ( _.contains(_models, model) ) {
 
         switch (_state) {
 
@@ -83,6 +83,50 @@ App.ProjectsCollection = Backbone.Collection.extend({
       }
 
     });
+
+  },
+
+  getVisibleModels: function() {
+
+    var _visible_models = new Backbone.Collection();
+
+    // for each model in the collection
+    this.each(function(model) {
+
+      // if model visible attribute is not false
+      if ( model.get('visible') !== false) {
+
+        // add the model to the collection
+        _visible_models.add(model);
+
+      }
+
+    });
+
+    // return the collection
+    return _visible_models;
+
+  },
+
+  getVisibleThumbnailModels: function() {
+
+    var _visible_thumbnail_models = new Backbone.Collection();
+
+    // for each model in the collection
+    this.each(function(model) {
+
+      // if model visible attribute is not false
+      if ( model.get('visible') === 'thumbnail') {
+
+        // add the model to the collection
+        _visible_thumbnail_models.add(model);
+
+      }
+
+    });
+
+    // return the collection
+    return _visible_thumbnail_models;
 
   },
 
@@ -136,6 +180,60 @@ App.ProjectsCollection = Backbone.Collection.extend({
 
       // if this models categories attribute contains the current category
       if ( _.contains(_categories_keys, _category) ) {
+
+        // add the model to the collection
+        _projects.add(model);
+
+      }
+
+    });
+
+    return _projects;
+
+  },
+
+  getUniqueClients: function() {
+
+    var _clientsArray = [],
+        _uniqueClientsArray = [];
+
+    // for each model in the collection
+    this.each(function(model) {
+
+      var _client = model.get('client'),
+          _url_client = model.get('url_client'),
+          _client_logo = model.get('client_logo');
+
+      // if the client does not exist in _clientsArray AND client is not an empty string
+      if ( !(_.contains(_clientsArray, _client)) && _client !== '' ) {
+
+        _clientsArray.push(_client);
+
+        _uniqueClientsArray.push({
+          'title': _client,
+          'url_title': _url_client,
+          'logo': _client_logo
+        });
+
+      }
+
+    });
+
+    // return an object with the unique clients
+    return _uniqueClientsArray;
+
+  },
+
+  getProjectsByClient: function(client) {
+
+    var _client = client,
+        _projects = new Backbone.Collection();
+
+    // for each model in the collection
+    this.each(function(model) {
+
+      // if this model's client is equal to the client argument
+      if ( _client === model.get('client') ) {
 
         // add the model to the collection
         _projects.add(model);
