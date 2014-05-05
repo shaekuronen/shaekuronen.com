@@ -5,7 +5,8 @@ App.ProjectsCollection = Backbone.Collection.extend({
 
   setSelectedCategory: function(category) {
 
-    _.each(this.models, function(model) {
+    // for each model in the collection
+    this.each(function(model) {
 
       if ( _.contains(model.get('categories'), category) ) {
 
@@ -25,7 +26,8 @@ App.ProjectsCollection = Backbone.Collection.extend({
 
     var selectedCollection = new Backbone.Collection();
 
-    _.each(this.models, function(model) {
+    // for each model in the collection
+    this.each(function(model) {
 
       // if model attribute selected is set to true
       if ( model.get('selected') ) {
@@ -42,11 +44,11 @@ App.ProjectsCollection = Backbone.Collection.extend({
 
   getUniqueCategories: function() {
 
-    var that = this,
-        _categoriesArray = [],
+    var _categoriesArray = [],
         _uniqueCategoriesArray = [];
 
-    _.each(that.models, function(model) {
+    // for each model in the collection
+    this.each(function(model) {
 
       var _categories = model.get('categories'),
           _categories_keys = _.keys(_categories);
@@ -78,12 +80,11 @@ App.ProjectsCollection = Backbone.Collection.extend({
 
   getProjectsByCategory: function(category) {
 
-    var that = this,
-        _category = category,
+    var _category = category,
         _projects = new Backbone.Collection();
 
     // for each model in the collection
-    that.each(function(model) {
+    this.each(function(model) {
 
       // for each category in the categories attribute
       var _categories = model.get('categories'),
