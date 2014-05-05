@@ -13,6 +13,8 @@ App.GridItemView = Marionette.ItemView.extend({
 
     App.vent.trigger('project:selected', this.model.get('id'));
 
+    App.vent.trigger('project:detail:requested', this.model);
+
   }
 
 });

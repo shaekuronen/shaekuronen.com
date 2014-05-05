@@ -26,6 +26,10 @@ App.ProjectModel = Backbone.Model.extend({
     // model defaults to selected
     this.set('selected', true);
 
+    // visible defaults to false
+    // tri-state possible values: thumbnail, detail, false
+    this.set('visible', false);
+
   },
 
   // take the original categories and add url safe versions of each category

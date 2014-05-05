@@ -42,6 +42,50 @@ App.ProjectsCollection = Backbone.Collection.extend({
 
   },
 
+  // models is an array of the models which will have their state updated
+  // model visible state has three valid states: thumbnail, detail, false
+  setVisibleModels: function(models, state) {
+
+    var _models = models,
+        _state = state;
+
+    // for each model in the collection
+    this.each(function(model) {
+
+      // if the current model is contained in the _models array
+      if _.contains(_models, model) {
+
+        switch (_state) {
+
+          case 'thumbnail':
+            model.set('visible', 'thumbnail');
+            break;
+
+          case 'detail':
+            model.set('visible', 'detail');
+            break;
+
+          case false:
+            model.set('visible', false);
+            break;
+
+          default:
+            model.set('visible', false);
+            break;
+
+        }
+
+      } else {
+
+        // set all models not specified in the _models array visible state to false
+        model.set('visible', false);
+
+      }
+
+    });
+
+  },
+
   getUniqueCategories: function() {
 
     var _categoriesArray = [],

@@ -2,6 +2,7 @@
 App = new Marionette.Application();
 
 App.addRegions({
+  mainRegion: '#sk-main-region',
   dropdownsRegion: '#sk-dropdowns-region',
   gridRegion: '#grid-region',
   itemDetailRegion: '#item-detail-region'
