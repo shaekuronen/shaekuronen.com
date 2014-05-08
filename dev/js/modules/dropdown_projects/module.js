@@ -5,7 +5,16 @@ App.module("ProjectsDropdown", function(ProjectsDropdown, App, Backbone, Marione
 
     tagName: 'li',
 
-    template: JST['dev/templates/projects_dropdown_project_item.hbs']
+    template: JST['dev/templates/projects_dropdown_project_item.hbs'],
+
+    events: {
+      'click': 'itemClicked'
+    },
+
+    itemClicked: function() {
+      console.log('itemClicked executed');
+      App.vent.trigger('nav:item:selected', this.model);
+    }
 
   });
 
@@ -13,7 +22,6 @@ App.module("ProjectsDropdown", function(ProjectsDropdown, App, Backbone, Marione
 
     tagName: 'li',
 
-    // itemView: ProjectsDropdown.ProjectsCollectionView,
     itemView: ProjectsDropdown.ProjectItemView,
 
     itemViewContainer: '.sk-dropdown-nav_dropdown-element_sub-nav',

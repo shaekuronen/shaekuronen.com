@@ -5,7 +5,7 @@ App.CategoriesCollection = Backbone.Collection.extend({
 
   initialize: function() {
 
-
+    this.name = 'categories';
 
   }
 

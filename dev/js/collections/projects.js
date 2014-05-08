@@ -3,6 +3,12 @@ App.ProjectsCollection = Backbone.Collection.extend({
 
   model: App.ProjectModel,
 
+  initialize: function() {
+
+    this.name = 'projects';
+
+  },
+
   setSelectedCategory: function(category) {
 
     // for each model in the collection
@@ -52,33 +58,43 @@ App.ProjectsCollection = Backbone.Collection.extend({
     // for each model in the collection
     this.each(function(model) {
 
+      var _model = model;
+
       // if the current model is contained in the _models array
-      if ( _.contains(_models, model) ) {
+      if ( _.contains(_models, _model) ) {
+
+        console.log('IF');
 
         switch (_state) {
 
           case 'thumbnail':
-            model.set('visible', 'thumbnail');
+            console.log('setVisibleModels executed and state is ' + _state);
+            _model.set('visible', 'thumbnail');
             break;
 
           case 'detail':
-            model.set('visible', 'detail');
+            console.log('setVisibleModels executed and state is ' + _state);
+            _model.set('visible', 'detail');
             break;
 
           case false:
-            model.set('visible', false);
+            console.log('setVisibleModels executed and state is ' + _state);
+            _model.set('visible', false);
             break;
 
           default:
-            model.set('visible', false);
+            console.log('setVisibleModels executed and state is default');
+            _model.set('visible', false);
             break;
 
         }
 
       } else {
 
+        console.log('ELSE');
+
         // set all models not specified in the _models array visible state to false
-        model.set('visible', false);
+        _model.set('visible', false);
 
       }
 

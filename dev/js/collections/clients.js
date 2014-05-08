@@ -5,7 +5,7 @@ App.ClientsCollection = Backbone.Collection.extend({
 
   initialize: function() {
 
-
+    this.name = 'clients';
 
   }
 
