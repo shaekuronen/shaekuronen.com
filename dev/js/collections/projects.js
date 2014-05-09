@@ -50,10 +50,18 @@ App.ProjectsCollection = Backbone.Collection.extend({
 
   // models is an array of the models which will have their state updated
   // model visible state has three valid states: thumbnail, detail, false
-  setVisibleModels: function(models, state) {
+  setVisibleModels: function(modelsArray, state) {
 
-    var _models = models,
-        _state = state;
+    window.these_models = modelsArray;
+
+    var _models = new Backbone.Collection(modelsArray),
+        _state = state,
+        _modelsIds = [];
+
+    // get the ids of the models in modelsArray
+    _models.each(function(model) {
+      _modelsIds.push(model.get('id'));
+    });
 
     // for each model in the collection
     this.each(function(model) {
@@ -61,7 +69,7 @@ App.ProjectsCollection = Backbone.Collection.extend({
       var _model = model;
 
       // if the current model is contained in the _models array
-      if ( _.contains(_models, _model) ) {
+      if ( _.contains(_modelsIds, _model.get('id')) ) {
 
         console.log('IF');
 
