@@ -9,11 +9,11 @@ App.EventsController = Marionette.Controller.extend({
       // get the collection the model is in
       // name is defined in collection initialize function
       var _model = model,
-          _collection = model.collection.name;
+          _collectionName = model.collection.name;
 
-      console.log('the name of this models collection is ' + _collection);
+      console.log('the name of this models collection is ' + _collectionName);
 
-      switch (_collection) {
+      switch (_collectionName) {
 
         case 'projects':
           console.log('PROJECTS');
